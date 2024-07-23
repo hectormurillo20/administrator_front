@@ -3,21 +3,14 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
 
-class CreateCrontroller extends Controller
+class RegisterController extends Controller
 {
-
-    public function create(Request $request)
+    public function register(Request $request)
     {
-
-        $response = Http::withHeaders([
-            'Content-Type' => 'application/json',
-            'Referer' => 'http://localhost:8000',
-            'Accept' => 'application/json',
-        ])->post('http://localhost:8000/register', [
+       
+        $response = $this->request('POST', 'register', [
             'name' => $request->name,
             'email' => $request->email,
             'password' => $request->password,
