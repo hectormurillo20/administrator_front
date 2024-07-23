@@ -8,6 +8,14 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-    <h1 class="text-3xl font-bold underline">Hello, Vite!</h1>
+    <form action="{{route('register')}}" method="post">
+        @csrf
+        @method('post')
+        <input type="text" name="name" placeholder="Name">
+        <input type="email" name="email" placeholder="Email">
+        <input type="password" name="password" placeholder="Password">
+        <input type="password" name="password_confirmation" placeholder="Confirmation password">
+        <button type="submit">Register</button>
+    </form>
 </body>
 </html>
