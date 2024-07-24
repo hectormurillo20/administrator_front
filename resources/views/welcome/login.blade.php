@@ -1,11 +1,11 @@
 <x-welcome>
     <h1 class="flex text-4xl p-4 justify-center">Inicio de Sesión</h1>
-    <form action="{{route('register')}}" method="POST" class="p-4 items-center justify-center">
+    <form action="{{route('login')}}" method="POST" class="p-4 items-center justify-center">
         @csrf
         @method('POST')
         <div class="p-2">
-            <label for="username" class="mr-2">Usuario o correo electronico</label>
-            <input id="username" class="rounded" type="text" name="username" placeholder="Ingresa tu usuario o correo electronico" required>
+            <label for="email" class="mr-2">Correo electronico</label>
+            <input id="email" class="rounded" type="email" name="email" placeholder="Ingresa tu correo electronico" size="30" required>
         </div>
         <div class="p-2">
             <label for="password" class="mr-2">Contraseña</label>
